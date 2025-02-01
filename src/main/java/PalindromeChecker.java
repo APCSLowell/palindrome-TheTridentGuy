@@ -34,16 +34,26 @@ public void tester()
       System.out.println(lines[i] + " is NOT a palindrome.");
     }
   }
-}
-public boolean palindrome(String word)
-{
-  //your code here
-  return false;
-}
-public String reverse(String str)
-{
-    String sNew = new String();
-    //your code here
-    return sNew;
-}
+}public String onlyLetters(String sString){
+        String n = new String();
+        for(int i=0; i<sString.length(); i++){
+            String s = sString.substring(i,i+1);
+            int c = (int)sString.charAt(i);
+            if((65<=c && c<=90)||(97<=c && c<=122)){
+                n+=s;
+            }
+        }
+        return n;
+    }
+    public boolean palindrome(String sWord){
+    sWord = onlyLetters(sWord.toLowerCase());
+    return sWord.equals(reverse(sWord));
+    }
+    public String reverse(String sWord){
+        String n = new String();
+        for(int i = sWord.length(); i>0; i--){
+            n+=sWord.substring(i-1, i);
+        }
+        return n;
+    }
 }
